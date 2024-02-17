@@ -34,9 +34,11 @@ for (const btn of allBtn) {
     // const grandTotal = document.getElementById('grand-total').innerText;
     // const grandToInteger = parseInt(grandTotal);
     // const sum2 = grandToInteger + parseInt(price);
-
+    e.target.parentNode.parentNode.style.backgroundColor = "gray";
+    e.target.setAttribute("disabled", true);
     totalCost('total-cost', price);
     setInnerText('cart-count', count);
+    setInnerText('budget', budgetCalc);
   });
 }
 function totalCost(id, value) {
