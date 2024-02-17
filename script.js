@@ -16,6 +16,16 @@ for (const btn of allBtn) {
     li.appendChild(p);
     li.appendChild(p2);
     selectedContainer.appendChild(li);
+    
+    const budget = document.getElementById('budget').innerText;
+    const budgetToInt = parseInt(budget);
+    const budgetAmount = document.getElementById('budget');
+    const budgetCalc = budgetToInt - parseInt(price);
+    budgetAmount.innerText = budgetCalc;
+    if(budgetCalc < 0) {
+        alert("Budget amount is only $900!");
+        return;
+    }
 
     // const totalCost = document.getElementById('total-cost').innerText;
     // const toInteger = parseInt(totalCost);
@@ -25,9 +35,7 @@ for (const btn of allBtn) {
     // const grandToInteger = parseInt(grandTotal);
     // const sum2 = grandToInteger + parseInt(price);
 
-    console.log();
     totalCost('total-cost', price);
-    totalCost('grand-total', price);
     setInnerText('cart-count', count);
   });
 }
@@ -50,8 +58,6 @@ function grandTotalCost(category) {
     } else {
         setInnerText('grand-total', toInteger);
     }
-
-    
 }
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
