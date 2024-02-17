@@ -38,7 +38,6 @@ for (const btn of allBtn) {
     e.target.setAttribute("disabled", true);
     totalCost('total-cost', price);
     setInnerText('cart-count', count);
-    setInnerText('budget', budgetCalc);
   });
 }
 function totalCost(id, value) {
